@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+#game-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Для позиционирования линии */
+    width: 310px; /* Размер игрового поля */
+    height: 310px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border: 2px solid #333;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #333;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cell.taken {
+    cursor: not-allowed;
+}
+
+#winning-line {
+    position: absolute;
+    height: 4px;
+    background-color: red;
+    width: 0;
+    top: 0;
+    left: 0;
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-out;
+    z-index: 10;
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+#status {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#restart {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#restart:hover {
+    background-color: #555;
+}
